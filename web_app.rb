@@ -5,7 +5,6 @@ require 'slim'
 require 'octokit'
 
 token = ENV['GITHUB_TOKEN']
-org_name = ENV['ORGANIZATION_NAME']
 rep_name = ENV['REPOSITORY_NAME']
 background_choice = ENV['BACKGROUND_COLOR']
 
@@ -80,12 +79,12 @@ l = Slim::Template.new { @layout }
 # ROUTES #
 
 get "/" do
-  slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css)
+  slim l.render(Object.new, :avatar => avatar, :rep_name => rep_name, :background_css => background_css)
 end
 
 post "/add" do
   if user_exists?(client, params["github"])
-    client.update_organization_membership(org_name, :user => params["github"])
+    client.add_collab(rep_name, :user => params["github"])
     "OK, Check your EMAIL"
   else
     "User not found. Please check your spelling"

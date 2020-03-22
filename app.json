@@ -1,20 +1,16 @@
 {
-  "name": "Automated Github Org Invites",
-  "description": "Out-of-the-box solution to automatic Github Organization invitations",
+  "name": "Automated Github Org Repository Invites",
+  "description": "Out-of-the-box solution to automatic Github Organization repository invitations, forked from user thundergolfer",
   "repository": "https://github.com/thundergolfer/automated-github-organization-invites",
   "logo": "https://avatars0.githubusercontent.com/u/12058921?v=3&u=e6f7435e0e4c399c1b43abf37e3c9c2918910fd4&s=400",
-  "keywords": ["github", "automation", "github organization", "invite"],
+  "keywords": ["github", "automation", "github organization", "invite", "repository"],
   "env": {
     "GITHUB_TOKEN": {
       "description": "A Github access token to activate the Octokit Github Client",
       "value": null
     },
-    "ORGANIZATION_NAME": {
-      "description": "You can confirm it by going to your org's dashboard. The URL will be: https://github.com/orgs/{ORGANIZATION_NAME}/dashboard",
-      "value": null
-    },
     "REPOSITORY_NAME": {
-      "description": "Please ensure that the repository is owned by {ORGANIZATION_NAME}",
+      "description": "The repository name to add your collaborators",
       "value": null
     },
     "BACKGROUND_COLOR": {
